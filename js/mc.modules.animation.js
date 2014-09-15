@@ -1807,14 +1807,17 @@ $(window).load(function(){
         var textPageInstanceHolder    = $( txt_modCont);
         var textPageInstance          = $( "#module-wrapper", textPageInstanceHolder);
         if( textPageInstance.length <= 0 ){return;}
-        var mapHolder   = $("#module-container #map-holder");
+        //var mapHolder   = $("#module-container #map-holder");
+		var mapHolder   = null;
         var winH        = $(window).height();
         var winW        = $(window).width();
         var mapW        = screen.width;/**/
         var mapLeft     = (- get_OffsetWidth()) * .5;
-        var mapH        = mapHolder.height();
+        //var mapH        = mapHolder.height();
+		var mapH        = null;
 
-        var mediaHolder = $("#module-contact-container #media-holder-contact", textPageInstance);
+        //var mediaHolder = $("#module-contact-container #media-holder-contact", textPageInstance);
+		var mediaHolder = null;
 
         if( mediaHolder.length > 0 ){
             initialMediaH = mediaHolder.height();
