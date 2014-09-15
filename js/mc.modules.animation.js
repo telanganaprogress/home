@@ -152,6 +152,7 @@ $(window).load(function(){
             var hashURL = "";
             if(checkURL.indexOf(urlCharDeeplink) == -1 && checkURL != ""){
                 if( checkURL == "index.html" || checkURL == "index.htm" ){
+				alert('check1');
                     checkURL = "";
                     if( checkURL == "" && customPageStart == true ){
                         checkURL = customPageStartURL;
@@ -163,6 +164,7 @@ $(window).load(function(){
                     window.location.hash = hashURL;
                 }
                 else{
+				alert('check2');
                     checkURL = checkURL.replace(urlCharDeeplink, "");
                     checkURL = checkURL.substring( checkURL.lastIndexOf("/") + 1);
                     hashURL = updateMenu(checkURL, prevURL, false, true);
@@ -170,6 +172,7 @@ $(window).load(function(){
                 }
             }
             else{
+			alert('check3');
                 if( checkURL == "" && customPageStart == true ){
                     checkURL = customPageStartURL;
                     checkURL = checkURL.replace(templateBaseURL, "");
@@ -229,6 +232,7 @@ $(window).load(function(){
         menuData = ( menuOptionsArr[ menuOptionID ][ 1 ] != "null" ) ? menuOptionsArr[ menuOptionID ][ 1 ]: menuOptionsArr[ menuOptionID ][ 6 ][ submenuOptionID ][ 1 ] ;
         setMobileMenuOption(menuData[2]);
         touchContainer();
+		alert('check4');
         urlChanged();
     }
     /* update menu */
