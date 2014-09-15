@@ -6,7 +6,7 @@
  **/
 
  /* start GENERAL CUSTOMIZATION PROPERTIES */
-var templateBaseURL         = "http://telanganaprogress.com/";/*"http://themes.mediacreed.com/html/synergy/"*/
+var templateBaseURL         = "http://telanganaprogress.github.io/home/";/*"http://themes.mediacreed.com/html/synergy/"*/
 var themeColor              = "#d00355";
 var menuActive              = true;
 var menuHoverActive         = true; /* it will change to false if menuActive == true. If 'menuActive' 
