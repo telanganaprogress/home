@@ -1860,10 +1860,7 @@ $(window).load(function(){
 		TweenMax.to(  modContact, .6, { css:{ bottom:"0px" },  ease:Circ.easeInOut,
                 onComplete: function(){
                     if( mapHolder.length > 0 ){
-					alert('removed gmap');
-                       
-                    }
-                    contactFormSetup();
+					contactFormSetup();
                 }
         });
         var modContainerW = $("#module-container").width();
@@ -5155,8 +5152,7 @@ $(window).load(function(){
 
         var mapW        = screen.width;
         var mapLeft     = (- get_OffsetWidth()) * .5;
-		alert('mapHolder.length'+mapHolder.length);
-        if( mapHolder.length > 0 ){TweenMax.to(mapHolder, .3, {css:{left: mapLeft}, easing:Sine.easeOut});}
+		if( mapHolder.length > 0 ){TweenMax.to(mapHolder, .3, {css:{left: mapLeft}, easing:Sine.easeOut});}
 
         var currWindowW             = $(window).width() - get_OffsetWidth() - $(t_scrBarV2).width();
         if( touchDevice == 1){ currWindowW = $(window).width() - templateMenuW; }
