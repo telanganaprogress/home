@@ -1807,17 +1807,14 @@ $(window).load(function(){
         var textPageInstanceHolder    = $( txt_modCont);
         var textPageInstance          = $( "#module-wrapper", textPageInstanceHolder);
         if( textPageInstance.length <= 0 ){return;}
-        //var mapHolder   = $("#module-container #map-holder");
-		var mapHolder   = null;
+        var mapHolder   = $("#module-container #map-holder");
         var winH        = $(window).height();
         var winW        = $(window).width();
         var mapW        = screen.width;/**/
         var mapLeft     = (- get_OffsetWidth()) * .5;
-        //var mapH        = mapHolder.height();
-		var mapH        = null;
+        var mapH        = mapHolder.height();
 
-        //var mediaHolder = $("#module-contact-container #media-holder-contact", textPageInstance);
-		var mediaHolder = null;
+        var mediaHolder = $("#module-contact-container #media-holder-contact", textPageInstance);
 
         if( mediaHolder.length > 0 ){
             initialMediaH = mediaHolder.height();
@@ -1860,7 +1857,30 @@ $(window).load(function(){
 		TweenMax.to(  modContact, .6, { css:{ bottom:"0px" },  ease:Circ.easeInOut,
                 onComplete: function(){
                     if( mapHolder.length > 0 ){
-					contactFormSetup();
+                        mapHolder.gMap({
+                                    controls: {
+                                        panControl: true,
+                                        zoomControl: true,
+                                        mapTypeControl: false,
+                                        scaleControl: false,
+                                        streetViewControl: false,
+                                        overviewMapControl: false
+                                    },
+                                    scrollwheel: false,
+                                	address: mapHolder.attr("data-address"),
+                                	zoom: 16,
+                                	markers:[{
+                                			latitude: mapHolder.attr("data-latitude"),
+                                			longitude: mapHolder.attr("data-longitude"),
+                                            icon: {
+                                				image: mapHolder.attr("data-icon"),
+                                				iconsize: [iconSize[0], iconSize[1]],
+                                				iconanchor: [anchor[0], anchor[1]]
+                                			}
+                               		}]
+                                });
+                    }
+                    contactFormSetup();
                 }
         });
         var modContainerW = $("#module-container").width();
@@ -5145,14 +5165,14 @@ $(window).load(function(){
     function moduleUpdate_contact(){
         var textPageInstanceHolder    = $( txt_modCont);
         var textPageInstance          = $( "#module-wrapper", textPageInstanceHolder);
-        var mapHolder                 = null;//$("#map-holder_SURYA", textPageInstanceHolder);
+        var mapHolder                 = $("#map-holder", textPageInstanceHolder);
         if(textPageInstance.length <= 0 || $("#module-contact-holder").length <= 0){return;}
         var dd                        = $("#module-container").width();
         $("#module-contact-holder").css("left", (dd - $("#module-contact-holder").width())*.5 + "px");
 
         var mapW        = screen.width;
         var mapLeft     = (- get_OffsetWidth()) * .5;
-		if( mapHolder.length > 0 ){TweenMax.to(mapHolder, .3, {css:{left: mapLeft}, easing:Sine.easeOut});}
+        if( mapHolder.length > 0 ){TweenMax.to(mapHolder, .3, {css:{left: mapLeft}, easing:Sine.easeOut});}
 
         var currWindowW             = $(window).width() - get_OffsetWidth() - $(t_scrBarV2).width();
         if( touchDevice == 1){ currWindowW = $(window).width() - templateMenuW; }
