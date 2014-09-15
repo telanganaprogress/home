@@ -5165,7 +5165,7 @@ $(window).load(function(){
     function moduleUpdate_contact(){
         var textPageInstanceHolder    = $( txt_modCont);
         var textPageInstance          = $( "#module-wrapper", textPageInstanceHolder);
-        var mapHolder                 = $("#map-holder", textPageInstanceHolder);
+        var mapHolder                 = null;//$("#map-holder_SURYA", textPageInstanceHolder);
         if(textPageInstance.length <= 0 || $("#module-contact-holder").length <= 0){return;}
         var dd                        = $("#module-container").width();
         $("#module-contact-holder").css("left", (dd - $("#module-contact-holder").width())*.5 + "px");
