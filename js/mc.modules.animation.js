@@ -1860,28 +1860,8 @@ $(window).load(function(){
 		TweenMax.to(  modContact, .6, { css:{ bottom:"0px" },  ease:Circ.easeInOut,
                 onComplete: function(){
                     if( mapHolder.length > 0 ){
-                        mapHolder.gMap({
-                                    controls: {
-                                        panControl: true,
-                                        zoomControl: true,
-                                        mapTypeControl: false,
-                                        scaleControl: false,
-                                        streetViewControl: false,
-                                        overviewMapControl: false
-                                    },
-                                    scrollwheel: false,
-                                	address: mapHolder.attr("data-address"),
-                                	zoom: 16,
-                                	markers:[{
-                                			latitude: mapHolder.attr("data-latitude"),
-                                			longitude: mapHolder.attr("data-longitude"),
-                                            icon: {
-                                				image: mapHolder.attr("data-icon"),
-                                				iconsize: [iconSize[0], iconSize[1]],
-                                				iconanchor: [anchor[0], anchor[1]]
-                                			}
-                               		}]
-                                });
+					alert('removed gmap');
+                       
                     }
                     contactFormSetup();
                 }
