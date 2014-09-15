@@ -5172,6 +5172,7 @@ $(window).load(function(){
 
         var mapW        = screen.width;
         var mapLeft     = (- get_OffsetWidth()) * .5;
+		alert('mapHolder.length'+mapHolder.length);
         if( mapHolder.length > 0 ){TweenMax.to(mapHolder, .3, {css:{left: mapLeft}, easing:Sine.easeOut});}
 
         var currWindowW             = $(window).width() - get_OffsetWidth() - $(t_scrBarV2).width();
